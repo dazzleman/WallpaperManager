@@ -1,0 +1,32 @@
+<resources>
+    <string name="app_name">WallpaperManager</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="is_land">false</string>
+
+
+    <string-array name="category">
+        <item>fashion</item>
+        <item>nature</item>
+        <item>backgrounds</item>
+        <item>science</item>
+        <item>education</item>
+        <item>people</item>
+        <item>feelings</item>
+        <item>religion</item>
+        <item>health</item>
+        <item>places</item>
+        <item>animals</item>
+        <item>industry</item>
+        <item>food</item>
+        <item>computer</item>
+        <item>sports</item>
+        <item>transportation</item>
+        <item>travel</item>
+        <item>buildings</item>
+        <item>business</item>
+        <item>music</item>
+    </string-array>
+</resources>
