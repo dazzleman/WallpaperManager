@@ -19,6 +19,10 @@ public class PopularFragment extends Fragment {
         // Required empty public constructor
     }
 
+    public static PopularFragment getInstance(){
+        return new PopularFragment();
+    }
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,

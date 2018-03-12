@@ -5,6 +5,9 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
     <string name="is_land">false</string>
+    <string name="title_category_fragment">Категория</string>
+    <string name="title_new_photo_fragment">Новое</string>
+    <string name="title_popular_fragment">Популярное</string>
 
 
     <string-array name="category">

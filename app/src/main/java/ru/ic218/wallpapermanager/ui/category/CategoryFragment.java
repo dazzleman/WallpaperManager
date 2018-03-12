@@ -4,7 +4,6 @@ package ru.ic218.wallpapermanager.ui.category;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
-import android.support.v4.app.Fragment;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
@@ -27,6 +26,10 @@ public class CategoryFragment extends MvpLceFragment<SwipeRefreshLayout, Categor
 
     public CategoryFragment() {
         // Required empty public constructor
+    }
+
+    public static CategoryFragment getInstance(){
+        return new CategoryFragment();
     }
 
     @Override

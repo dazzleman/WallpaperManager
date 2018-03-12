@@ -19,6 +19,9 @@ public class NewPhotoFragment extends Fragment {
         // Required empty public constructor
     }
 
+    public static NewPhotoFragment getInstance(){
+        return new NewPhotoFragment();
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
