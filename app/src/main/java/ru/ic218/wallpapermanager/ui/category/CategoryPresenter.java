@@ -27,7 +27,7 @@ class CategoryPresenter extends MvpBasePresenter<CategoryView> {
     private SparseArray<CategoryPhoto> categoryMap;
 
     void init(final boolean pullToRefresh, String[] categoryArray, String[] categoryArrayTranslate){
-        if(adapter != null && adapter.getItemCount() != 0){
+        if(adapter == null || adapter.getItemCount() == 0){
             categoryMap = new SparseArray<>();
             Random random = new SecureRandom();
             for (int i = 0; i < categoryArray.length; i++) {
