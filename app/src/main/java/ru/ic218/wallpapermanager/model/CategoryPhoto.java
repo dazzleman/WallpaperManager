@@ -1,9 +1,5 @@
 package ru.ic218.wallpapermanager.model;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-
 /**
  * Created by Home user on 10.03.2018.
  */
@@ -12,10 +8,12 @@ public class CategoryPhoto {
 
     private String photoUrl;
     private String title;
+    private String titleTranslate;
 
-    public CategoryPhoto(String photoUrl, String title) {
+    public CategoryPhoto(String photoUrl, String title, String titleTranslate) {
         this.photoUrl = photoUrl;
         this.title = title;
+        this.titleTranslate = titleTranslate;
     }
 
     public String getPhotoUrl() {
@@ -34,7 +32,15 @@ public class CategoryPhoto {
         this.title = title;
     }
 
-    public static List<CategoryPhoto> getCategory() {
+    public String getTitleTranslate() {
+        return titleTranslate;
+    }
+
+    public void setTitleTranslate(String titleTranslate) {
+        this.titleTranslate = titleTranslate;
+    }
+
+/*    public static List<CategoryPhoto> getCategory() {
         return new ArrayList<>(
                 Arrays.asList(
                         new CategoryPhoto("http://i.imgur.com/zuG2bGQ.jpg", "Galaxy"),
@@ -43,5 +49,23 @@ public class CategoryPhoto {
                         new CategoryPhoto("http://i.imgur.com/qpr5LR2.jpg", "Earth"),
                         new CategoryPhoto("http://i.imgur.com/pSHXfu5.jpg", "Astronaut"),
                         new CategoryPhoto("http://i.imgur.com/3wQcZeY.jpg", "Satellite")));
+    }*/
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+        if (getClass() != obj.getClass())
+            return false;
+        CategoryPhoto other = (CategoryPhoto) obj;
+        if (!photoUrl.equals(other.photoUrl))
+            return false;
+        if (!title.equals(other.title))
+            return false;
+        return true;
     }
+
+
 }

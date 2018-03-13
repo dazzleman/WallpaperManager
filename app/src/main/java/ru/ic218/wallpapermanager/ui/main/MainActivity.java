@@ -12,6 +12,7 @@ import java.util.Arrays;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import ru.ic218.wallpapermanager.R;
+import ru.ic218.wallpapermanager.data.RepositoryProviderImpl;
 import ru.ic218.wallpapermanager.ui.category.CategoryFragment;
 import ru.ic218.wallpapermanager.ui.main.adapter.ViewPagerFragmentAdapter;
 import ru.ic218.wallpapermanager.ui.newphoto.NewPhotoFragment;
@@ -33,6 +34,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
+
+        RepositoryProviderImpl.getInstance();
 
         initToolbar();
         initTabLayout();

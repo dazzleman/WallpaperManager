@@ -1,0 +1,31 @@
+<resources>
+    <string name="app_name">Wallpaper</string>
+
+    <string name="is_land">false</string>
+    <string name="title_category_fragment">Категория</string>
+    <string name="title_new_photo_fragment">Новое</string>
+    <string name="title_popular_fragment">Популярное</string>
+
+    <string-array name="category">
+        <item>Мода</item>
+        <item>Природа</item>
+        <item>Обои</item>
+        <item>Наука</item>
+        <item>Образование</item>
+        <item>Люди</item>
+        <item>Эмоции</item>
+        <item>Религия</item>
+        <item>Здоровье</item>
+        <item>Площади</item>
+        <item>Животные</item>
+        <item>Промышленность</item>
+        <item>Еда</item>
+        <item>Компьютеры</item>
+        <item>Спорт</item>
+        <item>Транспорт</item>
+        <item>Путешествия</item>
+        <item>Архитектура</item>
+        <item>Бизнес</item>
+        <item>Музыка</item>
+    </string-array>
+</resources>

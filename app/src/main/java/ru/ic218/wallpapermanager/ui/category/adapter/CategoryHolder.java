@@ -1,6 +1,5 @@
 package ru.ic218.wallpapermanager.ui.category.adapter;
 
-import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.ImageView;
@@ -21,16 +20,14 @@ public class CategoryHolder extends RecyclerView.ViewHolder implements View.OnCl
 
     @BindView(R.id.imageCategory) ImageView photo;
     @BindView(R.id.titleCategory) TextView title;
-    @BindView(R.id.cardCategory)  CardView cardCategory;
 
     CategoryHolder(View itemView) {
         super(itemView);
         ButterKnife.bind(this, itemView);
-        cardCategory.setOnClickListener(this);
     }
 
     void bind(CategoryPhoto item){
-        title.setText(item.getTitle());
+        title.setText(item.getTitleTranslate());
         Glide.with(photo.getContext())
                 .load(item.getPhotoUrl())
                 .into(photo);
