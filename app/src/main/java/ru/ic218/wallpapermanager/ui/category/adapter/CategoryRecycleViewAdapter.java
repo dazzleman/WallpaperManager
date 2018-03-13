@@ -5,8 +5,6 @@ import android.util.SparseArray;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
 
-import java.util.List;
-
 import ru.ic218.wallpapermanager.R;
 import ru.ic218.wallpapermanager.model.CategoryPhoto;
 import ru.ic218.wallpapermanager.model.Hit;
@@ -17,12 +15,7 @@ import ru.ic218.wallpapermanager.model.Hit;
 
 public class CategoryRecycleViewAdapter extends RecyclerView.Adapter<CategoryHolder> {
 
-    private List<CategoryPhoto> listCategory;
     private SparseArray<CategoryPhoto> mapCategory;
-
-    public CategoryRecycleViewAdapter(List<CategoryPhoto> listCategory) {
-        this.listCategory = listCategory;
-    }
 
     public CategoryRecycleViewAdapter(SparseArray<CategoryPhoto> mapCategory) {
         this.mapCategory = mapCategory;
@@ -35,7 +28,6 @@ public class CategoryRecycleViewAdapter extends RecyclerView.Adapter<CategoryHol
 
     @Override
     public void onBindViewHolder(CategoryHolder holder, int position) {
-        //holder.bind(listCategory.get(position));
         holder.bind(mapCategory.get(position));
     }
 

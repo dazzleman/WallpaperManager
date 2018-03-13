@@ -12,6 +12,7 @@ import retrofit2.Response;
 import ru.ic218.wallpapermanager.data.RepositoryProviderImpl;
 import ru.ic218.wallpapermanager.model.Photo;
 import ru.ic218.wallpapermanager.ui.popular.adapter.PopularRecycleViewAdapter;
+import ru.ic218.wallpapermanager.utils.Logger;
 
 /**
  * @author Nikolay Vlaskin on 13.03.2018.
@@ -32,7 +33,7 @@ public class PopularPresenter extends MvpBasePresenter<PopularView> {
     }
 
     void getLatestPhoto(int page) {
-        System.out.println("Send Request");
+        Logger.log("Send Request");
         Map<String, String> map = new HashMap<>();
         map.put("page", String.valueOf(page));
         map.put("order", "popular");
@@ -48,12 +49,12 @@ public class PopularPresenter extends MvpBasePresenter<PopularView> {
                             Photo photo = response.body();
                             adapter.setData(photo.getHits());
                         }
-                        System.out.println("Get response");
+                        Logger.log("Get response");
                     }
 
                     @Override
                     public void onFailure(Call<Photo> call, Throwable t) {
-                        System.out.println(t.getMessage());
+                        Logger.log(t.getMessage());
                     }
                 });
     }
