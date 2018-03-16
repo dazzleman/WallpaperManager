@@ -28,9 +28,11 @@ public class CategoryHolder extends RecyclerView.ViewHolder implements View.OnCl
 
     void bind(CategoryPhoto item){
         title.setText(item.getTitleTranslate());
-        Glide.with(photo.getContext())
-                .load(item.getPhotoUrl())
-                .into(photo);
+        if(!item.getPhotoUrl().equals("")){
+            Glide.with(photo.getContext())
+                    .load(item.getPhotoUrl())
+                    .into(photo);
+        }
     }
 
     @Override

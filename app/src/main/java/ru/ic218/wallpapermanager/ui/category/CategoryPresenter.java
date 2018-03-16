@@ -64,6 +64,7 @@ class CategoryPresenter extends MvpBasePresenter<CategoryView> {
                     }
                     @Override
                     public void onFailure(Call<Photo> call, Throwable t) {
+                        Logger.log(t.getMessage());
                     }
                 });
     }

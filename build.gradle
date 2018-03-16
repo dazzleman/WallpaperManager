@@ -28,12 +28,13 @@ task clean(type: Delete) {
     delete rootProject.buildDir
 }
 
-ext.versions = [ANDROID_SUPPORT  : "26.1.0",
+ext.versions = [ANDROID_SUPPORT  : "27.1.0",
                 CALENDAR_VIEW    : "1.4.3",
                 CONSTRAINT_LAYOUT: "1.0.2",
                 GLIDE            : "3.8.0",
                 LEAK_CANARY      : "1.5",
                 RETROFIT         : "2.3.0",
+                OKHTTP           : "3.9.0",
                 MOSBY            : "3.1.0",
                 BUTTERKNIFE      : "8.8.1",
                 STETHO           : "1.5.0"]

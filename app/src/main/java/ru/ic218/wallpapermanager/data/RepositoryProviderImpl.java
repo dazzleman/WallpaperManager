@@ -21,20 +21,38 @@ public final class RepositoryProviderImpl implements RepositoryProvider {
 
     public static RepositoryProviderImpl getInstance() {
         if (INSTANCE == null) {
-            return new RepositoryProviderImpl();
+            INSTANCE = new RepositoryProviderImpl();
+            return INSTANCE;
         } else return INSTANCE;
     }
 
     private RepositoryProviderImpl() {
+        initRetrofit();
+    }
+
+    private void initRetrofit() {
+/*        final OkHttpClient httpClient;
+        if (true) {
+            httpClient = InsecureHttpClient.client();
+        } else {
+            HttpLoggingInterceptor loggingInterceptor = new HttpLoggingInterceptor();
+            if (BuildConfig.DEBUG) {
+                loggingInterceptor.setLevel(HttpLoggingInterceptor.Level.BODY);
+            }
+            httpClient = new OkHttpClient.Builder()
+                    .addInterceptor(loggingInterceptor)
+                    .build();
+        }*/
+
         Api api = new Retrofit.Builder()
                 .baseUrl("https://pixabay.com/")
+                //.client(httpClient)
                 .addConverterFactory(GsonConverterFactory.create())
                 .build()
                 .create(Api.class);
 
         networkProvider = new NetworkProviderImpl(api);
     }
-
 
     @Override
     public Call<Photo> getPhotoByOptions(Map<String, String> options) {
