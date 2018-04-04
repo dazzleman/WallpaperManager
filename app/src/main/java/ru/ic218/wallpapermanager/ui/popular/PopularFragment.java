@@ -111,7 +111,7 @@ public class PopularFragment extends MvpLceFragment<SwipeRefreshLayout,
 
     @Override
     public void loadData(boolean pullToRefresh) {
-        presenter.init(true);
+        presenter.init(pullToRefresh);
     }
 
     @Override

@@ -16,7 +16,7 @@ public interface Api {
 
     String API_KEY = "8333120-9bedd8456e4d45460ee77b828";
 
-    @GET("api/?per_page=50")
+    @GET("api/?per_page=80")
     Call<Photo> getPhotoByOptions(@Query("key") String API_KEY, @QueryMap Map<String, String> options);
 
     @GET("api/?per_page=10&min_width=340")

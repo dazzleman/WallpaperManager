@@ -22,12 +22,14 @@ public class PopularPresenter extends MvpBasePresenter<PopularView> {
 
     private PopularRecycleViewAdapter adapter;
 
-    void init(final boolean pullToRefresh) {
-        adapter = new PopularRecycleViewAdapter(new ArrayList<>());
-        ifViewAttached((view) -> {
-            view.setData(adapter);
-            view.showContent();
-        });
+    void init(boolean pullToRefresh) {
+        if (!pullToRefresh) {
+            adapter = new PopularRecycleViewAdapter(new ArrayList<>());
+            ifViewAttached((view) -> {
+                view.setData(adapter);
+                view.showContent();
+            });
+        }
 
         getLatestPhoto(1);
     }
@@ -48,8 +50,9 @@ public class PopularPresenter extends MvpBasePresenter<PopularView> {
                         if (response.isSuccessful()) {
                             Photo photo = response.body();
                             adapter.setData(photo.getHits());
+                            Logger.log("Get response: " + response.raw().request().url());
+                            ifViewAttached((view) -> view.showContent());
                         }
-                        Logger.log("Get response");
                     }
 
                     @Override
